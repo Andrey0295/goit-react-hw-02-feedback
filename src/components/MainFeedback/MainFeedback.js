@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Statistics from '../Statistics/Statistics';
 import FeedbackOptions from '../FeedbackOptions/FeedbackOptions';
+import Section from '../Section/Section';
 
 class MainFeedback extends Component {
   state = {
@@ -37,7 +38,7 @@ class MainFeedback extends Component {
   render() {
     const buttonNames = ['good', 'bad', 'neutral'];
     return (
-      <>
+      <Section>
         <FeedbackOptions
           options={buttonNames}
           onLeaveFeedback={this.handleChange}
@@ -49,7 +50,7 @@ class MainFeedback extends Component {
           total={this.state.total}
           positivePercentage={this.state.positivePercentage}
         />
-      </>
+      </Section>
     );
   }
 }

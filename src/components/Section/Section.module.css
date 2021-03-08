@@ -1,0 +1,15 @@
+.feedbackSection {
+  /* margin-right: auto;
+  margin-left: auto; */
+  margin: 100px auto;
+
+  width: 600px;
+
+  border: 1px solid black;
+  background-color: black;
+  color: ghostwhite;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

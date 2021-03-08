@@ -7,9 +7,6 @@ function App() {
   return (
     <>
       <Container>
-        <div className="App">
-          <p>Hello React</p>
-        </div>
         <MainFeedback />
       </Container>
     </>

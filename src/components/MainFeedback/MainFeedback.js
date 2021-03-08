@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+import Statistics from '../Statistics/Statistics';
+import FeedbackOptions from '../FeedbackOptions/FeedbackOptions';
+
 class MainFeedback extends Component {
   state = {
     good: 0,
@@ -32,44 +35,23 @@ class MainFeedback extends Component {
   }
 
   render() {
+    const buttonNames = ['good', 'bad', 'neutral'];
     return (
       <>
-        <div>
-          <h1>Please leave feedback</h1>
-          <button
-            type="button"
-            className="goodBtn"
-            name="good"
-            onClick={this.handleChange}
-          >
-            Good
-          </button>
-          <button type="button" name="neutral" onClick={this.handleChange}>
-            Neutral
-          </button>
-          <button type="button" name="bad" onClick={this.handleChange}>
-            Bad
-          </button>
-        </div>
-        <div>
-          <h1>Statistics</h1>
-          <ul>
-            <li>Good: {this.state.good}</li>
-            <li>Neutral: {this.state.neutral}</li>
-            <li>Bad: {this.state.bad}</li>
-            <li>Total: {this.state.total}</li>
-            <li>Positive feedbacks: {this.state.positivePercentage}</li>
-          </ul>
-        </div>
+        <FeedbackOptions
+          options={buttonNames}
+          onLeaveFeedback={this.handleChange}
+        />
+        <Statistics
+          good={this.state.good}
+          neutral={this.state.neutral}
+          bad={this.state.bad}
+          total={this.state.total}
+          positivePercentage={this.state.positivePercentage}
+        />
       </>
     );
   }
 }
-
-// state = {
-//   good: 0,
-//   neutral: 0,
-//   bad: 0,
-// };
 
 export default MainFeedback;

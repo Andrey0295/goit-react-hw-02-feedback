@@ -3,12 +3,11 @@ import PropTypes from 'prop-types';
 
 import Notification from '../Notification/Notification';
 
-
-
 const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
   return (
     <div>
       <h1>Statistics</h1>
+
       {total > 0 ? (
         <ul>
           <li>Good: {good}</li>
